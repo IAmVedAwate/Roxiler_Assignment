@@ -42,7 +42,7 @@ exports.getStoreById = async (req, res) => {
 };
 
 exports.updateStore = async (req, res) => {
-    const { name, email, address, id } = req.body;
+    const { name, email, address, id } = req;
 
     try {
         const store = await Store.findById(id);

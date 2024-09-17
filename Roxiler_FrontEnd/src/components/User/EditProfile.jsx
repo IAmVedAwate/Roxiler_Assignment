@@ -4,6 +4,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const EditProfile = ({ roleChangeAllow }) => {
     const notify = (msg) => toast.success(msg, {
         position: "top-right",
@@ -12,7 +13,7 @@ const EditProfile = ({ roleChangeAllow }) => {
     });
     const [formData, setFormData] = useState({ name: '', email: '', oldpass: '', address: '', role: 'User' });
     const [errors, setErrors] = useState({ name: '', msg: '' });
-    const { userInfo } = useUser();
+    const { userInfo, loginUser } = useUser();
     const [oldUser, setOldUser] = useState(null);
 
 
@@ -59,7 +60,7 @@ const EditProfile = ({ roleChangeAllow }) => {
         try {
             await axios.put(`http://localhost:5000/api/users/me?id=${userInfo.id}`, formData, config);
             notify("Account Updated Successfully!!!")
-
+            loginUser({email: formData.email, password: formData.oldpass});
         } catch (err) {
             let errorMsg = err.response.data.error;
             let msg = `${errorMsg}`.split(": ");

@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const { roleEnum } = require('../utils/RoleEnum');
+const { updateStore } = require('./storeController');
 
 
 exports.getAllUsers = async (req, res) => {
@@ -36,7 +37,7 @@ exports.updateUserDetails = async (req, res) => {
         const isMatch = await bcrypt.compare(oldpass, user.password);
         if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
         if(user.role==roleEnum[2]){
-            let data = {name, email, address, id: req.query.id}
+            let data = {name: name, email: email, address: address, id: req.query.id}
             updateStore(data, res);
         }
         

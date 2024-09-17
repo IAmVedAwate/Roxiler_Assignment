@@ -8,6 +8,7 @@ import './bootswatch.css'
 import SearchBar from './components/User/SearchBar';
 import { SearchProvider } from './context/SearchContext';
 ReactDOM.createRoot(document.getElementById('root')).render(
+
     <BrowserRouter>
     <SearchProvider>
         <header>

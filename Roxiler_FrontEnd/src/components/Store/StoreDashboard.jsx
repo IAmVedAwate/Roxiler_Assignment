@@ -6,6 +6,7 @@ const StoreOwnerDashboard = () => {
   const { userInfo } = useUser();
   const [store, setStore] = useState(null);
   const [ratings, setRatings] = useState([]);
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -16,15 +17,14 @@ const StoreOwnerDashboard = () => {
           headers: {
             Authorization: `Bearer ${userInfo.token}`,
           },
-        };
+        }; 
         const response = await axios.get(`http://localhost:5000/api/stores/byemail?email=${userInfo.email}`, config);
-
+        const usersRes = await axios.get('http://localhost:5000/api/users',config);
+        setUsers(usersRes.data);
         let foundStore = response.data;
         
 
         if (foundStore) {
-          console.log(foundStore);
-          
           setStore(foundStore);
           setRatings(foundStore.ratings);
         } else {
@@ -93,13 +93,15 @@ const StoreOwnerDashboard = () => {
             <thead className="table-dark text-center">
               <tr>
                 <th>User Name</th>
+                <th>Email</th>
                 <th>Rating</th>
               </tr>
             </thead>
             <tbody>
               {usersWithRatings.map((r) => (
                 <tr key={r._id}>
-                  <td className="text-center">{r.user || 'Anonymous'}</td>
+                  <td className="text-center">{users.filter(u => u._id == r.user)[0].name || 'Anonymous'}</td>
+                  <td className="text-center">{users.filter(u => u._id == r.user)[0].email || 'Anonymous'}</td>
                   <td className="text-center">{r.rating}</td>
                 </tr>
               ))}

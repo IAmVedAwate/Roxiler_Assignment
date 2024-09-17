@@ -107,3 +107,22 @@
 2024-09-16T06:34:23.708Z [INFO]: MongoDB Connected: localhost
 2024-09-16T06:34:23.711Z [INFO]: Admin
 2024-09-16T06:34:23.740Z [INFO]: Admin user already exists, no need to create one.
+2024-09-16T20:17:43.049Z [INFO]: MongoDB Connected: localhost
+2024-09-16T20:17:43.051Z [INFO]: Admin
+2024-09-16T20:17:43.075Z [INFO]: No Admin found, creating initial admin...
+2024-09-16T20:17:43.166Z [INFO]: Admin user created successfully
+2024-09-17T12:18:44.605Z [INFO]: MongoDB Connected: localhost
+2024-09-17T12:18:44.608Z [INFO]: Admin
+2024-09-17T12:18:44.638Z [INFO]: Admin user already exists, no need to create one.
+2024-09-17T12:57:46.058Z [INFO]: MongoDB Connected: localhost
+2024-09-17T12:57:46.060Z [INFO]: Admin
+2024-09-17T12:57:46.085Z [INFO]: Admin user already exists, no need to create one.
+2024-09-17T13:00:29.849Z [INFO]: MongoDB Connected: localhost
+2024-09-17T13:00:29.851Z [INFO]: Admin
+2024-09-17T13:00:29.877Z [INFO]: Admin user already exists, no need to create one.
+2024-09-17T13:05:17.560Z [INFO]: MongoDB Connected: localhost
+2024-09-17T13:05:17.562Z [INFO]: Admin
+2024-09-17T13:05:17.585Z [INFO]: Admin user already exists, no need to create one.
+2024-09-17T13:10:12.809Z [INFO]: MongoDB Connected: localhost
+2024-09-17T13:10:12.812Z [INFO]: Admin
+2024-09-17T13:10:12.833Z [INFO]: Admin user already exists, no need to create one.

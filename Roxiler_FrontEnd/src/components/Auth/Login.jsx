@@ -37,7 +37,7 @@ const Login = () => {
                         <ToastContainer/>
                         <h4 className='border-bottom pb-3 mb-4 text-danger text-center'>{error && <p>{error}</p>}</h4>
         
-                        <h4 className='border-bottom pb-3 mb-4 text-success text-center'>{userInfo && <p>Welcome as {userInfo.role}</p> }</h4>
+                        <h4 className='border-bottom pb-3 mb-4 text-success text-center'>{userInfo && <p>Welcome <b>{userInfo.name}</b> as <b>{userInfo.role}</b></p> }</h4>
                         <div className="col-md-12 px-5">
                             <section className='px-5'>
                                 <form id="account" onSubmit={handleSubmit}>
